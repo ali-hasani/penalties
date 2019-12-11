@@ -4,8 +4,9 @@ import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { homeRoutes } from './home.routing';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NbLayoutModule } from '@nebular/theme';
+import { NbLayoutModule, NbIconModule, NbDialogModule, NbDialogConfig } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { AddEmployeeComponent } from '../add-employee/add-employee.component';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -14,7 +15,10 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     RouterModule.forChild(homeRoutes),
     FlexLayoutModule,
     NbLayoutModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    NbIconModule,
+  ],
+  entryComponents: [
   ]
 })
 export class HomeModule { }
