@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import routes from './src/routes/user.routes';
+import routes from './routes/user.routes';
 import mongoose from 'mongoose';
 import chai from 'chai';
 
@@ -19,7 +19,7 @@ mongoose.connect(url, { useNewUrlParser: true });
 const db = mongoose.connection;
 
 const app = express();
-const PORT = 5000;
+const PORT = 3000;
 
 /**
 * Setup bodyparser
@@ -34,5 +34,5 @@ app.get('', function (req, res) {
 });
 
 app.listen(PORT, () => {
-    console.log("app is listening on port " + PORT);
+    console.log("app is listening on http://localhost:" + PORT);
 });
