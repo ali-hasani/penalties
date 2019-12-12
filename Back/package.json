@@ -1,0 +1,32 @@
+{
+  "name": "penalties",
+  "version": "1.0.0",
+  "description": "a project for our companies",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "babel-cli": "^6.26.0",
+    "babel-node": "0.0.1-security",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.19.0",
+    "bson-ext": "^2.0.3",
+    "chai": "^4.2.0",
+    "express": "^4.17.1",
+    "kerberos": "^1.1.3",
+    "mocha": "^6.2.2",
+    "mongodb": "^3.4.0",
+    "mongoose": "^5.8.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon ./index.js --exec babel-node -e js"
+  },
+  "author": "Ali Hasani",
+  "license": "ISC"
+}
