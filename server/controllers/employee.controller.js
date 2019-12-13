@@ -16,7 +16,6 @@ export const addNewEmployee = function (req, res) {
 export const getAllEmployees = function (req, res) {
     
     Employee.find({}, (err, employees) => {
-        res.setHeader('Access-Control-Allow-Origin', '*');
         if (err) {
             res.send(err);
         }
