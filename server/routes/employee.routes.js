@@ -1,4 +1,10 @@
-import { addNewEmployee, getAllEmployees, updateEmployee, getEmployeeById, deleteEmployee } from '../controllers/employee.controller';
+import {
+    addNewEmployee,
+    getAllEmployees,
+    updateEmployee,
+    getEmployeeById,
+    deleteEmployee
+} from '../controllers/employee.controller';
 
 const employeeRoutes = function (app) {
     app.route('/employee')

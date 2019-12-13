@@ -7,8 +7,6 @@ import penaltyRoutes from './routes/penalty.routes';
 import mongoose from 'mongoose';
 import chai from 'chai';
 
-const assert = chai.assert;
-
 /**
  * Connect to database
  */
@@ -19,12 +17,15 @@ const app = express();
 const PORT = 3000;
 
 /**
-* Setup bodyparser
+* Setup app
 */
 app.use(cors());
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
+/**
+* route configs
+*/
 employeeRoutes(app);
 fileRoutes(app);
 penaltyRoutes(app);
@@ -34,5 +35,5 @@ app.get('', function (req, res) {
 });
 
 app.listen(PORT, () => {
-    console.log("app is listening on http://localhost:" + PORT);
+    console.log(`app is listening on http://localhost:${PORT}`);
 });
