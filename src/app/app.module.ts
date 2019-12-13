@@ -8,6 +8,9 @@ import { NbThemeModule, NbLayoutModule, NbDialogModule, NbDialogConfig, NbCardMo
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddEmployeeComponent } from './modules/add-employee/add-employee.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './core/interceptor/interceptor';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const dialogConfig: NbDialogConfig = new NbDialogConfig({
   autoFocus: true,
@@ -32,9 +35,11 @@ const dialogConfig: NbDialogConfig = new NbDialogConfig({
     NbLayoutModule,
     NbDialogModule.forRoot(dialogConfig),
     NbCardModule,
-    NbButtonModule
+    NbButtonModule,
+    HttpClientModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },],
   bootstrap: [AppComponent],
   entryComponents: [AddEmployeeComponent]
 })

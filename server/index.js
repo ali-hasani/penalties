@@ -1,11 +1,11 @@
 import express from 'express';
+import cors from 'cors';
 import bodyParser from 'body-parser';
-import routes from './routes/user.routes';
+import routes from './routes/employee.routes';
 import mongoose from 'mongoose';
 import chai from 'chai';
 
 const assert = chai.assert;
-
 
 /**
  * Connect to database
@@ -13,17 +13,18 @@ const assert = chai.assert;
 const url = 'mongodb://localhost:27017/penalties';
 mongoose.connect(url, { useNewUrlParser: true });
 
-/**
-* get instance of db, connected to
-*/
-const db = mongoose.connection;
-
 const app = express();
 const PORT = 3000;
 
 /**
 * Setup bodyparser
 */
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

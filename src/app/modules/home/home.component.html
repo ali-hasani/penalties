@@ -9,48 +9,15 @@
       </div>
 
       <div class="wrapper">
-        <div class="employee">
+        <div class="employee" *ngFor="let employee of employees">
           <div class="employee_main-chars">
-            <img src="../../../assets/images/employees/hajavi.jpg" alt="">
-            <span class="name">سجاد حاجوی</span>
-            <nb-icon icon="edit-outline" (click)="editUser('12548')"></nb-icon>
+            <img [src]="employee.picture" alt="">
+            <span class="name">{{employee.firstName}} {{employee.lastName}}</span>
+            <nb-icon icon="edit-outline" (click)="editEmployee(employee._id)"></nb-icon>
           </div>
           <div class="employee_details-chars">
             <p class="paid"><span class="title">جریمه پرداخت شده</span> : <span class="value">75,000</span></p>
             <p class="debt"><span class="title">بدهی به صندوق</span> : <span class="value">10,000</span></p>
-          </div>
-        </div>
-        <div class="employee">
-          <div class="employee_main-chars">
-            <img src="../../../assets/images/employees/nateghi.jpg" alt="">
-            <span class="name">امین ناطقی</span>
-            <nb-icon icon="edit-outline"></nb-icon>
-          </div>
-          <div class="employee_details-chars">
-            <p class="paid"><span class="title">جریمه پرداخت شده</span> : <span class="value">30,000</span></p>
-            <p class="debt"><span class="title">بدهی به صندوق</span> : <span class="value">0</span></p>
-          </div>
-        </div>
-        <div class="employee">
-          <div class="employee_main-chars">
-            <img src="../../../assets/images/employees/imandar.png" alt="">
-            <span class="name">حسین ایماندار</span>
-            <nb-icon icon="edit-outline"></nb-icon>
-          </div>
-          <div class="employee_details-chars">
-            <p class="paid"><span class="title">جریمه پرداخت شده</span> : <span class="value">95,000</span></p>
-            <p class="debt"><span class="title">بدهی به صندوق</span> : <span class="value">5,000</span></p>
-          </div>
-        </div>
-        <div class="employee">
-          <div class="employee_main-chars">
-            <img src="../../../assets/images/employees/ebrahimi.jpg" alt="">
-            <span class="name">رحمان ابراهیمی</span>
-            <nb-icon icon="edit-outline"></nb-icon>
-          </div>
-          <div class="employee_details-chars">
-            <p class="paid"><span class="title">جریمه پرداخت شده</span> : <span class="value">15,000</span></p>
-            <p class="debt"><span class="title">بدهی به صندوق</span> : <span class="value">0</span></p>
           </div>
         </div>
       </div>
