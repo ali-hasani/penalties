@@ -4,8 +4,9 @@ import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { homeRoutes } from './home.routing';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NbLayoutModule, NbIconModule } from '@nebular/theme';
+import { NbLayoutModule, NbIconModule, NbCardModule, NbSpinnerModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { AddEmployeeModule } from 'src/app/shared/modules/add-employee/add-employee.module';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -16,6 +17,9 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbLayoutModule,
     NbEvaIconsModule,
     NbIconModule,
+    NbCardModule,
+    NbSpinnerModule,
+    AddEmployeeModule
   ],
   entryComponents: [
   ]

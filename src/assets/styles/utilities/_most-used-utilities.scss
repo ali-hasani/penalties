@@ -1,9 +1,203 @@
+//#region padding
+
+@mixin p-a($value) {
+    .p-#{$value} {
+        padding: #{$value}px !important;
+    }
+}
+
+@mixin p-t($value) {
+    .p-t-#{$value} {
+        padding-top: #{$value}px !important;
+    }
+}
+
+@mixin p-r($value) {
+    .p-r-#{$value} {
+        padding-right: #{$value}px !important;
+    }
+}
+
+@mixin p-b($value) {
+    .p-b-#{$value} {
+        padding-bottom: #{$value}px !important;
+    }
+}
+
+@mixin p-l($value) {
+    .p-l-#{$value} {
+        padding-left: #{$value}px !important;
+    }
+}
+
+@include p-a(0);
+@include p-a(5);
+@include p-a(10);
+@include p-a(20);
+@include p-a(30);
+
+@include p-t(0);
+@include p-t(5);
+@include p-t(10);
+@include p-t(20);
+@include p-t(30);
+
+@include p-r(0);
+@include p-r(5);
+@include p-r(10);
+@include p-r(20);
+@include p-r(30);
+@include p-r(40);
+
+@include p-b(0);
+@include p-b(5);
+@include p-b(10);
+@include p-b(20);
+@include p-b(30);
+@include p-b(40);
+
+@include p-l(0);
+@include p-l(5);
+@include p-l(10);
+@include p-l(20);
+//#endregion padding
+
+//#region margin
+
+@mixin m-a($value) {
+    .m-#{$value} {
+        margin: #{$value}px !important;
+    }
+}
+
+@mixin m-t($value) {
+    @if $value==1 {
+        .m-t-#{$value} {
+            margin-top: #{$value}rem !important;
+        }
+    }
+
+    @else if $value==2 {
+        .m-t-#{$value} {
+            margin-top: #{$value}rem !important;
+        }
+    }
+
+    @else {
+        .m-t-#{$value} {
+            margin-top: #{$value}px !important;
+        }
+    }
+}
+
+@mixin m-r($value) {
+    .m-r-#{$value} {
+        margin-right: #{$value}px !important;
+    }
+}
+
+@mixin m-b($value) {
+    .m-b-#{$value} {
+        margin-bottom: #{$value}px !important;
+    }
+}
+
+@mixin m-l($value) {
+    @if $value==1 {
+        .m-l-#{$value} {
+            margin-left: #{$value}rem !important;
+        }
+    }
+
+    @else if $value==2 {
+        .m-l-#{$value} {
+            margin-left: #{$value}rem !important;
+        }
+    }
+
+    @else {
+        .m-l-#{$value} {
+            margin-left: #{$value}px !important;
+        }
+    }
+}
+
+@include m-a(0);
+@include m-a(5);
+@include m-a(10);
+@include m-a(15);
+@include m-a(20);
+@include m-a(30);
+@include m-a(40);
+
+@include m-t(0);
+@include m-t(5);
+@include m-t(10);
+@include m-t(15);
+@include m-t(20);
+@include m-t(30);
+@include m-t(40);
+@include m-t(1);
+@include m-t(2);
+
+@include m-r(0);
+@include m-r(5);
+@include m-r(10);
+@include m-r(15);
+@include m-r(20);
+@include m-r(30);
+@include m-r(40);
+
+@include m-b(0);
+@include m-b(5);
+@include m-b(10);
+@include m-b(15);
+@include m-b(20);
+@include m-b(30);
+@include m-b(40);
+
+@include m-l(0);
+@include m-l(5);
+@include m-l(10);
+@include m-l(15);
+@include m-l(20);
+@include m-l(30);
+@include m-l(40);
+@include m-l(1);
+@include m-l(2);
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+//#endregion margin
+
 .color-middle {
     color: #777;
 }
 
 .center {
     text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.float-left {
+    float: left;
 }
 
 .text-success {

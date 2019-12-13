@@ -1,10 +1,22 @@
+.layout-container .content .columns nb-layout-column {
+  background: #fff;
+  padding: 0 !important;
+}
 
+.nb-theme-corporate p,
+.nb-theme-corporate .paragraph {
+  font-family: 'IRANSans';
+}
 
-.layout-container .content .columns nb-layout-column{
-    background: #fff;
-    padding: 0 !important;
-  }
+.nb-theme-corporate nb-spinner.status-basic {
+  background-color: rgba(143, 155, 179, 0.09);
+}
 
-  .nb-theme-corporate p, .nb-theme-corporate .paragraph{
-    font-family: 'IRANSans';
-  }
+.nb-theme-corporate nb-card {
+  border: none;
+  margin-bottom: 0;
+}
+
+.nb-theme-corporate nb-card-body{
+  padding: 1rem;
+}

@@ -13,7 +13,15 @@ export class EmployeeService {
         return this.http.get<Employee[]>(`http://localhost:3000/employee`);
     }
 
-    getById(employeeId: string): Observable<Employee> { 
+    getById(employeeId: string): Observable<Employee> {
         return this.http.get<Employee>(`http://localhost:3000/employee/${employeeId}`);
+    }
+
+    add(employee): Observable<Employee[]> {
+        return this.http.post<Employee[]>(`http://localhost:3000/employee`, employee);
+    }
+
+    update(employee: Employee): Observable<Employee[]> {
+        return this.http.put<Employee[]>(`http://localhost:3000/employee/${employee._id}`, employee);
     }
 }

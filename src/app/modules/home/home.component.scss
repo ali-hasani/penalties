@@ -218,7 +218,6 @@ nb-icon {
             display: flex;
             flex-direction: row;
             align-items: center;
-            margin-bottom: 20px;
 
             img {
                 width: 40px;
@@ -242,6 +241,8 @@ nb-icon {
         }
 
         &_details-chars {
+            margin-top: 10px;
+
             p {
                 display: flex;
                 margin-bottom: 10px;
@@ -259,10 +260,17 @@ nb-icon {
                 &.debt {
                     .value {
                         color: red;
-                        font-weight: 700;
                     }
                 }
             }
         }
     }
+}
+
+.noThing {
+    margin-top: 100px;
+    color: rgba(102, 102, 102, .15);
+    font-size: 17px;
+    font-weight: 900;
+    text-align: center;
 }

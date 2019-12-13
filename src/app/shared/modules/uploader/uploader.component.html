@@ -1,0 +1,13 @@
+<div class="uploader">
+  <p class="uploader__title">{{ title ? title : '..........' }}</p>
+  <button type="button" (click)="imgFileInput.click()" class="uploader__btn">برای انتخاب تصویر کلیک کنید</button>
+  <div class="uploader__image-container" *ngIf="image">
+    <div class="uploader__image-wrapper">
+      <img [src]="image" alt="" class='uploader__image'>
+    </div>
+    <div class="uploader__close-constainer">
+      <button mat-button (click)="cancel()">انصراف</button>
+    </div>
+  </div>
+</div>
+<input hidden type="file" #imgFileInput [accept]="acceptedFile" (change)="fileChanged($event)" />
