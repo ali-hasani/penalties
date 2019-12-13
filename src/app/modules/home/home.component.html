@@ -1,0 +1,164 @@
+<div class="home">
+  <div class="main" fxLayut="row wrap" dir="rtl">
+    <div class="employees" fxFlex="100/3">
+      <div class="main_title main_title--flex">
+        <span class="title">کارمندان</span>
+        <p class="icon">
+          <nb-icon icon="plus-square-outline"></nb-icon>
+        </p>
+      </div>
+
+      <div class="wrapper">
+        <div class="employee">
+          <div class="employee_main-chars">
+            <img src="../../../assets/images/employees/hajavi.jpg" alt="">
+            <span class="name">سجاد حاجوی</span>
+            <nb-icon icon="edit-outline" (click)="editUser('12548')"></nb-icon>
+          </div>
+          <div class="employee_details-chars">
+            <p class="paid"><span class="title">جریمه پرداخت شده</span> : <span class="value">75,000</span></p>
+            <p class="debt"><span class="title">بدهی به صندوق</span> : <span class="value">10,000</span></p>
+          </div>
+        </div>
+        <div class="employee">
+          <div class="employee_main-chars">
+            <img src="../../../assets/images/employees/nateghi.jpg" alt="">
+            <span class="name">امین ناطقی</span>
+            <nb-icon icon="edit-outline"></nb-icon>
+          </div>
+          <div class="employee_details-chars">
+            <p class="paid"><span class="title">جریمه پرداخت شده</span> : <span class="value">30,000</span></p>
+            <p class="debt"><span class="title">بدهی به صندوق</span> : <span class="value">0</span></p>
+          </div>
+        </div>
+        <div class="employee">
+          <div class="employee_main-chars">
+            <img src="../../../assets/images/employees/imandar.png" alt="">
+            <span class="name">حسین ایماندار</span>
+            <nb-icon icon="edit-outline"></nb-icon>
+          </div>
+          <div class="employee_details-chars">
+            <p class="paid"><span class="title">جریمه پرداخت شده</span> : <span class="value">95,000</span></p>
+            <p class="debt"><span class="title">بدهی به صندوق</span> : <span class="value">5,000</span></p>
+          </div>
+        </div>
+        <div class="employee">
+          <div class="employee_main-chars">
+            <img src="../../../assets/images/employees/ebrahimi.jpg" alt="">
+            <span class="name">رحمان ابراهیمی</span>
+            <nb-icon icon="edit-outline"></nb-icon>
+          </div>
+          <div class="employee_details-chars">
+            <p class="paid"><span class="title">جریمه پرداخت شده</span> : <span class="value">15,000</span></p>
+            <p class="debt"><span class="title">بدهی به صندوق</span> : <span class="value">0</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="history" fxFlex="100/3">
+      <p class="main_title">تاریخچه</p>
+
+      <div class="wrapper">
+        <div class="file">
+          <div class="top">
+            <nb-icon icon="edit-outline"></nb-icon>
+            <p class="date">1398/9/13</p>
+          </div>
+          <div class="users">
+            <div class="user">
+              <img src="../../../assets/images/employees/hajavi.jpg" alt="">
+              <p class="chars">سجاد حاجوی</p>
+              <p class="paid-value">5000</p>
+            </div>
+            <div class="user">
+              <img src="../../../assets/images/employees/parsaie.png" alt="">
+              <p class="chars">محمد حسین پارسایی</p>
+              <p class="paid-value">5000</p>
+            </div>
+            <div class="user">
+              <img src="../../../assets/images/employees/imandar.png" alt="">
+              <p class="chars">حسین ایماندار</p>
+              <p class="paid-value">5000</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="file">
+          <div class="top">
+            <nb-icon icon="edit-outline"></nb-icon>
+            <p class="date">1398/9/12</p>
+          </div>
+          <div class="users">
+            <div class="user">
+              <img src="../../../assets/images/employees/hajavi.jpg" alt="">
+              <p class="chars">سجاد حاجوی</p>
+              <p class="paid-value">5000</p>
+            </div>
+            <div class="user">
+              <img src="../../../assets/images/employees/parsaie.png" alt="">
+              <p class="chars">محمد حسین پارسایی</p>
+              <p class="paid-value">5000</p>
+            </div>
+            <div class="user">
+              <img src="../../../assets/images/employees/imandar.png" alt="">
+              <p class="chars">حسین ایماندار</p>
+              <p class="paid-value">5000</p>
+            </div>
+            <div class="user">
+              <img src="../../../assets/images/employees/nateghi.jpg" alt="">
+              <p class="chars">سجاد حاجوی</p>
+              <p class="paid-value">5000</p>
+            </div>
+            <div class="user">
+              <img src="../../../assets/images/employees/ebrahimi.jpg" alt="">
+              <p class="chars">محمد حسین پارسایی</p>
+              <p class="paid-value">5000</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="file">
+          <div class="top">
+            <nb-icon icon="edit-outline"></nb-icon>
+            <p class="date">1398/9/11</p>
+          </div>
+          <div class="users">
+            <div class="user">
+              <img src="../../../assets/images/employees/parsaie.png" alt="">
+              <p class="chars">محمد حسین پارسایی</p>
+              <p class="paid-value">5000</p>
+            </div>
+            <div class="user">
+              <img src="../../../assets/images/employees/imandar.png" alt="">
+              <p class="chars">حسین ایماندار</p>
+              <p class="paid-value">5000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="statistics" fxFlex="100/3">
+      <p class="main_title">آمار</p>
+
+      <div class="wrapper">
+        <div class="stat">
+          <span class="icon-wrapper icon-wrapper--success">
+            <nb-icon icon="radio-button-on-outline"></nb-icon>
+          </span>
+          <span class="title">مبلغ جمع آوری شده</span> : <span class="value text-success">355,000</span>
+        </div>
+        <div class="stat">
+          <span class="icon-wrapper icon-wrapper--danger">
+            <nb-icon icon="pie-chart-outline"></nb-icon>
+          </span>
+          <span class="title">مجموع بدهی به صندوق</span> : <span class="value text-danger">95,000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    Developed by Ali Hasani's <img src="../../../assets/images/mind-hands-heart.svg" alt="" style="margin-left: 10px; width: 40px;">
+  </footer>
+</div>

@@ -1,0 +1,17 @@
+/* IRANYekan */
+@font-face {
+  font-family: "IRANYekan";
+  src: url("../fonts/iranyekan/eot/iranyekanwebregular(fanum).eot");
+  src: url("../fonts/iranyekan/eot/iranyekanwebregular(fanum).eot?#iefix") format("embedded-opentype"),
+  url("../fonts/iranyekan/woff2/iranyekanwebregular(fanum).woff2") format("woff2"),
+  url("../fonts/iranyekan/woff/iranyekanwebregular(fanum).woff") format("woff"),
+  url("../fonts/iranyekan/ttf/iranyekanwebregular(fanum).ttf") format("truetype"),
+  url("../fonts/iranyekan/svg/iranyekanwebregular(fanum).svg") format("svg");
+  font-weight: normal;
+}
+
+@import './settings/settings.scss';
+@import './elements/elements.scss';
+@import './utilities/utilities.scss';
+@import './overwirtes/overwirtes.scss';
+@import './components/components.scss';
