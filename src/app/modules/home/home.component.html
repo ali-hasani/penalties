@@ -17,15 +17,15 @@
             <span class="name">{{employee.firstName}} {{employee.lastName}}</span>
             <nb-icon icon="edit-outline" (click)="editEmployee(employee._id)"></nb-icon>
           </div>
-          <!-- <div class="employee_details-chars">
+          <div class="employee_details-chars">
             <p class="paid"><span class="title">جریمه پرداخت شده</span> : <span class="value">0</span></p>
             <p class="debt"><span class="title">بدهی به صندوق</span> : <span class="value">0</span></p>
-          </div> -->
+          </div>
         </div>
       </div>
     </nb-card>
 
-    <nb-card class="history" fxFlex="100/3">
+    <nb-card class="files" fxFlex="100/3">
       <div class="main_title main_title--flex">
         <span class="title">پرونده ها</span>
         <p class="icon">
@@ -33,7 +33,7 @@
         </p>
       </div>
 
-      <div class="noThing">پرونده ای ثبت نشده</div>
+      <div class="noThing" *ngIf="noFiles">پرونده ای ثبت نشده</div>
       <!-- <div class="wrapper">
         <div class="file">
           <div class="top">
@@ -135,6 +135,6 @@
     </nb-card>
   </div>
   <footer class="footer">
-    Developed by Ali Hasani's <img src="../../../assets/images/mind-hands-heart.svg" alt="" style="margin-left: 10px; width: 40px;">
+    Developed by Ali Hasani's <img src="../../../assets/images/mind-hands-heart.svg" alt="" style="margin-left: 10px;">
   </footer>
 </div>

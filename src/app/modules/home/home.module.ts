@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NbLayoutModule, NbIconModule, NbCardModule, NbSpinnerModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AddEmployeeModule } from 'src/app/shared/modules/add-employee/add-employee.module';
+import { AddFileModule } from 'src/app/shared/modules/add-file/add-file.module';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -19,7 +20,8 @@ import { AddEmployeeModule } from 'src/app/shared/modules/add-employee/add-emplo
     NbIconModule,
     NbCardModule,
     NbSpinnerModule,
-    AddEmployeeModule
+    AddEmployeeModule,
+    AddFileModule
   ],
   entryComponents: [
   ]

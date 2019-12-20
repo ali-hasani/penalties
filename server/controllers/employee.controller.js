@@ -14,7 +14,6 @@ export const addNewEmployee = function (req, res) {
 };
 
 export const getAllEmployees = function (req, res) {
-    
     Employee.find({}, (err, employees) => {
         if (err) {
             res.send(err);

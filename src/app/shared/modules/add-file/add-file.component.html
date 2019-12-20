@@ -1,0 +1,12 @@
+<nb-card dir="rtl">
+    <nb-card-header>
+        <span>ویرایش کارمند</span>
+    </nb-card-header>
+    <nb-card-body>
+
+    </nb-card-body>
+    <nb-card-footer dir="rtl" class="right">
+        <button [nbSpinner]="loading" nbSpinnerStatus="basic" nbButton (click)="save()" class="m-l-10" [disabled]="loading">ذخیره</button>
+        <button nbButton  status="basic" (click)="cancel()" class="float-left">انصراف</button>
+    </nb-card-footer>
+</nb-card>

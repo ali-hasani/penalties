@@ -65,7 +65,7 @@ nb-icon {
 
 .operations,
 .statistics,
-.history,
+.files,
 .employees {
     height: 100%;
     overflow: auto;
@@ -136,7 +136,7 @@ nb-icon {
     }
 }
 
-.history {
+.files {
     border-right: 5px solid #fff;
 
     .file {
