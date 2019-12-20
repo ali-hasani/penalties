@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddFileComponent } from './add-file.component';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule, MatAutocompleteModule } from '@angular/material';
 import { NbCardModule, NbButtonModule, NbInputModule, NbSpinnerModule } from '@nebular/theme';
 import { UploaderModule } from '../uploader/uploader.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -17,7 +17,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     UploaderModule,
     ReactiveFormsModule,
     FormsModule,
-    NbSpinnerModule
+    NbSpinnerModule,
+    MatAutocompleteModule
   ],
   exports: [
     AddFileComponent

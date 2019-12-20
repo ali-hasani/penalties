@@ -31,6 +31,12 @@ export class HomeComponent implements OnInit {
     disableClose: true
   };
 
+  addFileDialogConfig: MatDialogConfig = {
+    panelClass: 'add-file-dialog',
+    hasBackdrop: true,
+    disableClose: true
+  };
+
   ngOnInit() {
     this.getAllEmployees();
   }
@@ -78,9 +84,9 @@ export class HomeComponent implements OnInit {
   }
 
   addFile() {
-    this.dialogConfig.data = null;
-    this.dialogConfig.direction = 'rtl';
-    const dialogRef = this.dialog.open(AddFileComponent, this.dialogConfig).afterClosed().subscribe((result: DialogCloseData) => {
+    this.addFileDialogConfig.data = null;
+    this.addFileDialogConfig.direction = 'rtl';
+    const dialogRef = this.dialog.open(AddFileComponent, this.addFileDialogConfig).afterClosed().subscribe((result: DialogCloseData) => {
       if (!result.canceled) {
         this.getAllFiles();
       }
@@ -88,9 +94,9 @@ export class HomeComponent implements OnInit {
   }
 
   editFile(fileId: string) {
-    this.dialogConfig.data = { id: fileId };
-    this.dialogConfig.direction = 'rtl';
-    const dialogRef = this.dialog.open(AddFileComponent, this.dialogConfig).afterClosed().subscribe((result: DialogCloseData) => {
+    this.addFileDialogConfig.data = { id: fileId };
+    this.addFileDialogConfig.direction = 'rtl';
+    const dialogRef = this.dialog.open(AddFileComponent, this.addFileDialogConfig).afterClosed().subscribe((result: DialogCloseData) => {
       if (!result.canceled) {
         this.getAllFiles();
       }

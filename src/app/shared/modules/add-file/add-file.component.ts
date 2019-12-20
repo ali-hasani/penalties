@@ -1,10 +1,11 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
-import { NbDialogRef, NbDialogConfig, NB_WINDOW_CONTEXT } from '@nebular/theme';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FileService } from 'src/app/shared/services/file.service';
 import { File } from 'src/app/shared/models/file.model';
 import { ManipulationMode } from 'src/app/shared/enums/manipulation-mode.enum';
 import { DialogCloseData } from 'src/app/shared/models/dialog-close-data.model';
+import { Employee } from '../../models/employee.model';
+import { EmployeeService } from '../../services/employee.service';
 
 @Component({
   selector: 'app-add-file',
@@ -16,8 +17,12 @@ export class AddFileComponent implements OnInit {
   title = 'تصویر کارمند';
   loading = false;
   mode: ManipulationMode = ManipulationMode.create;
+
+  employees: Employee[] = [];
+
   constructor(
     private fileService: FileService,
+    private employeeService: EmployeeService,
     public dialogRef: MatDialogRef<AddFileComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
   }
@@ -31,6 +36,14 @@ export class AddFileComponent implements OnInit {
         this.file = result;
       });
     }
+  }
+
+  filter(value: string) {
+    this.employeeService.filterEmployees(value).subscribe(result => {
+      if (result) {
+        this.employees = result;
+      }
+    });
   }
 
   save() {
