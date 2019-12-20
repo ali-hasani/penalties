@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   NbThemeModule,
   NbLayoutModule,
+  NbLayoutDirection,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -23,7 +24,7 @@ import { NotificationComponent } from './shared/services/notification/notificati
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'corporate' }),
+    NbThemeModule.forRoot({ name: 'corporate' }, null, null, NbLayoutDirection.RTL),
     NbEvaIconsModule,
     FontAwesomeModule,
     NbLayoutModule,
