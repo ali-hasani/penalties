@@ -6,13 +6,27 @@
         <p>فایل متاخرین امروز</p>
         <div matAutocompleteOrigin #origin="matAutocompleteOrigin">
             <input type="text" fullwidth [matAutocomplete]="auto" [matAutocompleteConnectedTo]="origin" nbInput
-                placeholder="نام" class="m-t-1" #employeeInput (keyup)="filter(employeeInput.value)">
+                placeholder="جستجو در بین کارمندان .." class="m-t-1 search-input" #employeeInput
+                (keyup)="filter(employeeInput.value)">
         </div>
         <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let employee of employees" [value]="employee._id">
                 {{employee.firstName + " " + employee.lastName}}</mat-option>
         </mat-autocomplete>
     </nb-card-body>
+
+    <nb-card class="employees">
+        <div class="wrapper">
+            <div class="employee" *ngFor="let employee of selectedEmployees">
+                <div class="employee_main-chars">
+                    <img [src]="employee.picture" alt="">
+                    <span class="name">{{employee.firstName}} {{employee.lastName}}</span>
+                    <nb-icon icon="edit-outline" (click)="editEmployee(employee._id)"></nb-icon>
+                </div>
+            </div>
+        </div>
+    </nb-card>
+
     <nb-card-footer class="right">
         <button [nbSpinner]="loading" nbSpinnerStatus="basic" nbButton (click)="save()" class="m-l-10"
             [disabled]="loading">ذخیره</button>

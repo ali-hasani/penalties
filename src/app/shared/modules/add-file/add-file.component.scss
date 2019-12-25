@@ -1,0 +1,90 @@
+.search-input {
+    width: 100%;
+}
+
+$box-shadow : 0 0.5rem 1rem 0 rgba(44, 51, 73, .1);
+$border: 1px solid #edf1f7;
+$border-radius: .25rem;
+
+$color-danger: #ff3d71;
+$color-success: #00d68f;
+$color-primary: #36f;
+$color-info: #0095ff;
+
+$section-margin-b: 1.5rem;
+
+$transition: all .3s ease-out;
+
+.employees {
+    padding-bottom: $section-margin-b;
+    .employee {
+        background-color: #fff;
+        box-shadow: none;
+        color: #192038;
+        font-family: Open Sans, sans-serif;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        line-height: 1.25rem;
+        padding: 10px;
+        max-width: 365px;
+        border: $border;
+        border-bottom: none;
+        margin: auto;
+        box-shadow: none;
+
+        &_main-chars {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            img {
+                width: 40px;
+                height: 40px;
+                margin-left: 20px;
+                border-radius: $border-radius;
+            }
+
+            .name {
+                flex: 1;
+            }
+
+            nb-icon {
+                color: $color-primary;
+                width: 20px;
+
+                &:hover {
+                    color: $color-info;
+                }
+            }
+        }
+
+        &_details-chars {
+            margin-top: 10px;
+
+            p {
+                display: flex;
+                margin-bottom: 10px;
+
+                .title {
+                    color: #777;
+                }
+
+                .value {
+                    flex: 1;
+                    text-align: left;
+                    font-size: 22px;
+                }
+
+                &.debt {
+                    .value {
+                        color: red;
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            border-bottom: $border;
+        }
+    }
+}

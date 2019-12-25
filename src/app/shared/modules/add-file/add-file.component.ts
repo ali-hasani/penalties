@@ -19,6 +19,7 @@ export class AddFileComponent implements OnInit {
   mode: ManipulationMode = ManipulationMode.create;
 
   employees: Employee[] = [];
+  selectedEmployees: Employee[] = [];
 
   constructor(
     private fileService: FileService,
