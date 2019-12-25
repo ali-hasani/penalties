@@ -26,7 +26,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon ./index.js --exec babel-node -e js"
+    "server": "nodemon ./server.js --exec babel-node -e js"
   },
   "author": "Ali Hasani",
   "license": "ISC"
