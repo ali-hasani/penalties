@@ -13,13 +13,32 @@ export const addNewEmployee = function (req, res) {
     });
 };
 
-export const getAllEmployees = function (req, res) {
-    Employee.find({}, (err, employees) => {
-        if (err) {
-            res.send(err);
-        }
-        res.json(employees);
-    });
+export const getEmployees = function (req, res) {
+    if (req.query.filter) {
+        let filter = req.query.filter;
+        filter = filter.replace(/\s/g, '|');
+        const re = new RegExp(`${filter}`, 'g');
+        Employee.find({
+            _id: { '$nin': req.query.except ? req.query.except.split(',') : [] },
+            $or: [
+                { firstName: re },
+                { lastName: re },
+            ]
+        }, (err, employees) => {
+            if (err) {
+                res.send('err');
+            }
+            res.json(employees);
+        });
+    } else {
+        Employee.find({}, (err, employees) => {
+            if (err) {
+                res.send('err');
+            }
+
+            res.json(employees);
+        });
+    }
 };
 
 export const getEmployeeById = function (req, res) {
@@ -47,4 +66,4 @@ export const deleteEmployee = function (req, res) {
         }
         res.json(req.params.employeeId);
     });
-}
+};

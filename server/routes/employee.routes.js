@@ -1,14 +1,15 @@
 import {
     addNewEmployee,
-    getAllEmployees,
+    getEmployees,
     updateEmployee,
     getEmployeeById,
-    deleteEmployee
+    deleteEmployee,
+    filterEmployees
 } from '../controllers/employee.controller';
 
 const employeeRoutes = function (app) {
     app.route('/employee')
-        .get(getAllEmployees)
+        .get(getEmployees)
         .post(addNewEmployee);
 
     app.route('/employee/:employeeId')

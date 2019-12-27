@@ -7,17 +7,20 @@ export const PenaltySchema = new Schema({
         type: Number,
         required: 'value is required'
     },
+    paid: {
+        type: Boolean,
+        required: 'paid is required'
+    },
     paymentDate: {
-        type: Date,
+        type: String,
         required: 'paymentDate is required',
-        default: Date.now()
     },
-    employeeId: {
-        type: String,
-        required: 'employeeId is required'
+    employee: {
+        type: Schema.Types.ObjectId,
+        ref: 'Employee'
     },
-    fileId: {
-        type: String,
-        required: 'fileId is required'
+    file: {
+        type: Schema.Types.ObjectId,
+        ref: 'File'
     }
-}); 
+});

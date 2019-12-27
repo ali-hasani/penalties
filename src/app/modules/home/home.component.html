@@ -1,10 +1,11 @@
 <div class="home">
   <div class="main" fxLayut="row wrap" dir="rtl">
-    <nb-card class="employees" fxFlex="100/3" [nbSpinner]="!employees.length" nbSpinnerSize="small" nbSpinnerStatus="basic">
+    <nb-card class="employees" fxFlex="100/3" [nbSpinner]="!employees.length" nbSpinnerSize="small"
+      nbSpinnerStatus="basic">
       <div class="main_title main_title--flex">
         <span class="title">کارمندان</span>
         <p class="icon">
-          <nb-icon icon="plus-square-outline" (click)="addEmployee()"></nb-icon>
+          <nb-icon status="primary" icon="plus-square-outline" (click)="addEmployee()"></nb-icon>
         </p>
       </div>
 
@@ -17,10 +18,10 @@
             <span class="name">{{employee.firstName}} {{employee.lastName}}</span>
             <nb-icon icon="edit-outline" (click)="editEmployee(employee._id)"></nb-icon>
           </div>
-          <div class="employee_details-chars">
-            <p class="paid"><span class="title">جریمه پرداخت شده</span> : <span class="value">0</span></p>
+          <!-- <div class="employee_details-chars">
+            <p class="paid m-b-10"><span class="title">جریمه پرداخت شده</span> : <span class="value">0</span></p>
             <p class="debt"><span class="title">بدهی به صندوق</span> : <span class="value">0</span></p>
-          </div>
+          </div> -->
         </div>
       </div>
     </nb-card>
@@ -29,109 +30,46 @@
       <div class="main_title main_title--flex">
         <span class="title">پرونده ها</span>
         <p class="icon">
-          <nb-icon icon="plus-square-outline" (click)="addFile()"></nb-icon>
+          <nb-icon status="primary" icon="plus-square-outline" (click)="addFile()"></nb-icon>
         </p>
       </div>
 
       <div class="noThing" *ngIf="noFiles">پرونده ای ثبت نشده</div>
-      <!-- <div class="wrapper">
-        <div class="file">
+      <div class="wrapper">
+        <div class="file" *ngFor="let file of files">
           <div class="top">
-            <nb-icon icon="edit-outline"></nb-icon>
-            <p class="date">1398/9/13</p>
+            <nb-icon status="primary" icon="edit-outline" (click)="editFile(file._id)"></nb-icon>
+            <p class="date ltr">{{file.date | jalaliDate}} - {{file.date | jalaliDayName}}</p>
           </div>
-          <div class="users">
-            <div class="user">
-              <img src="../../../assets/images/employees/hajavi.jpg" alt="">
-              <p class="chars">سجاد حاجوی</p>
-              <p class="paid-value">5000</p>
-            </div>
-            <div class="user">
-              <img src="../../../assets/images/employees/parsaie.png" alt="">
-              <p class="chars">محمد حسین پارسایی</p>
-              <p class="paid-value">5000</p>
-            </div>
-            <div class="user">
-              <img src="../../../assets/images/employees/imandar.png" alt="">
-              <p class="chars">حسین ایماندار</p>
-              <p class="paid-value">5000</p>
+          <div class="penalties">
+            <div class="penalty" *ngFor="let penalty of file.penalties" [class.paid]="penalty.paid">
+              <img [src]="penalty.employee.picture" alt="">
+              <p class="chars">{{penalty.employee.firstName}} {{penalty.employee.lastName}}</p>
+              <p class="paid-value">{{penalty.value}}</p>
             </div>
           </div>
         </div>
-
-        <div class="file">
-          <div class="top">
-            <nb-icon icon="edit-outline"></nb-icon>
-            <p class="date">1398/9/12</p>
-          </div>
-          <div class="users">
-            <div class="user">
-              <img src="../../../assets/images/employees/hajavi.jpg" alt="">
-              <p class="chars">سجاد حاجوی</p>
-              <p class="paid-value">5000</p>
-            </div>
-            <div class="user">
-              <img src="../../../assets/images/employees/parsaie.png" alt="">
-              <p class="chars">محمد حسین پارسایی</p>
-              <p class="paid-value">5000</p>
-            </div>
-            <div class="user">
-              <img src="../../../assets/images/employees/imandar.png" alt="">
-              <p class="chars">حسین ایماندار</p>
-              <p class="paid-value">5000</p>
-            </div>
-            <div class="user">
-              <img src="../../../assets/images/employees/nateghi.jpg" alt="">
-              <p class="chars">سجاد حاجوی</p>
-              <p class="paid-value">5000</p>
-            </div>
-            <div class="user">
-              <img src="../../../assets/images/employees/ebrahimi.jpg" alt="">
-              <p class="chars">محمد حسین پارسایی</p>
-              <p class="paid-value">5000</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="file">
-          <div class="top">
-            <nb-icon icon="edit-outline"></nb-icon>
-            <p class="date">1398/9/11</p>
-          </div>
-          <div class="users">
-            <div class="user">
-              <img src="../../../assets/images/employees/parsaie.png" alt="">
-              <p class="chars">محمد حسین پارسایی</p>
-              <p class="paid-value">5000</p>
-            </div>
-            <div class="user">
-              <img src="../../../assets/images/employees/imandar.png" alt="">
-              <p class="chars">حسین ایماندار</p>
-              <p class="paid-value">5000</p>
-            </div>
-          </div>
-        </div>
-      </div> -->
+      </div>
     </nb-card>
 
     <nb-card class="statistics" fxFlex="100/3">
       <p class="main_title">آمار</p>
 
-      <div class="noThing">آماری موجود نیست</div>
-      <!-- <div class="wrapper">
+      <!-- <div class="noThing">آماری موجود نیست</div> -->
+      <div class="wrapper">
         <div class="stat">
           <span class="icon-wrapper icon-wrapper--success">
             <nb-icon icon="radio-button-on-outline"></nb-icon>
           </span>
-          <span class="title">مبلغ جمع آوری شده</span> : <span class="value text-success">355,000</span>
+          <span class="title">مبلغ جمع آوری شده</span> : <span class="value text-success">{{allPaidPenalties | number}}</span>
         </div>
         <div class="stat">
           <span class="icon-wrapper icon-wrapper--danger">
             <nb-icon icon="pie-chart-outline"></nb-icon>
           </span>
-          <span class="title">مجموع بدهی به صندوق</span> : <span class="value text-danger">95,000</span>
+          <span class="title">مجموع بدهی به صندوق</span> : <span class="value text-danger">{{allDeptToFund | number}}</span>
         </div>
-      </div> -->
+      </div>
     </nb-card>
   </div>
   <footer class="footer ltr left">

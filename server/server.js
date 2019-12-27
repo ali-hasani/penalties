@@ -3,9 +3,9 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import employeeRoutes from './routes/employee.routes';
 import fileRoutes from './routes/file.routes';
+import statisticsRoutes from './routes/statistics.routes';
 import penaltyRoutes from './routes/penalty.routes';
 import mongoose from 'mongoose';
-import chai from 'chai';
 
 /**
  * Connect to database
@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 */
 employeeRoutes(app);
 fileRoutes(app);
-penaltyRoutes(app);
+statisticsRoutes(app);
 
 app.get('', function (req, res) {
     res.send(`Node and express server lintening on port ${PORT}`);

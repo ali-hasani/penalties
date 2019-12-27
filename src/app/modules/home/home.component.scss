@@ -122,10 +122,9 @@ nb-icon {
             nb-icon {
                 width: 20px;
                 height: 20px;
+                color: #fff;
             }
         }
-
-        .title {}
 
         .value {
             flex: 1;
@@ -168,16 +167,14 @@ nb-icon {
         }
 
 
-        .users {
-            .user {
-                border-top: $border;
+        .penalties {
+            .penalty {
                 display: flex;
                 flex-wrap: nowrap;
                 justify-content: center;
                 align-items: center;
                 padding: 5px 10px;
-
-
+                background: rgba(255, 61, 113, .06);
 
                 img {
                     width: 30px;
@@ -193,6 +190,10 @@ nb-icon {
 
                 .paid-value {
                     max-width: 60px;
+                }
+
+                &.paid {
+                    background: rgba(0, 214, 143, .06);
                 }
             }
         }
@@ -245,7 +246,6 @@ nb-icon {
 
             p {
                 display: flex;
-                margin-bottom: 10px;
 
                 .title {
                     color: #777;
@@ -259,7 +259,7 @@ nb-icon {
 
                 &.debt {
                     .value {
-                        color: red;
+                        color: #ff3d71;
                     }
                 }
             }

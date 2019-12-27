@@ -25,7 +25,7 @@ export class EmployeeService {
         return this.http.put<Employee[]>(`http://localhost:3000/employee/${employee._id}`, employee);
     }
 
-    filterEmployees(value: string): Observable<Employee[]> {
-        return this.http.get<Employee[]>(`http://localhost:3000/employee?filter=${value}`);
+    filterEmployees(value: string, except: string[]): Observable<Employee[]> {
+        return this.http.get<Employee[]>(`http://localhost:3000/employee?filter=${value}&except=${except}`);
     }
 }

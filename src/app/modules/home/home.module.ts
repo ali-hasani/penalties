@@ -8,9 +8,15 @@ import { NbLayoutModule, NbIconModule, NbCardModule, NbSpinnerModule } from '@ne
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AddEmployeeModule } from 'src/app/shared/modules/add-employee/add-employee.module';
 import { AddFileModule } from 'src/app/shared/modules/add-file/add-file.module';
+import { JalaliPipe, JalaliDatePipe, JalaliTimePipe, JalaliDayNamePipe } from 'src/app/shared/pipes/jalali.pipe';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [
+    HomeComponent,
+    JalaliPipe,
+    JalaliDatePipe,
+    JalaliTimePipe,
+    JalaliDayNamePipe],
   imports: [
     CommonModule,
     RouterModule.forChild(homeRoutes),
@@ -21,7 +27,7 @@ import { AddFileModule } from 'src/app/shared/modules/add-file/add-file.module';
     NbCardModule,
     NbSpinnerModule,
     AddEmployeeModule,
-    AddFileModule
+    AddFileModule,
   ],
   entryComponents: [
   ]

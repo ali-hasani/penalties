@@ -6,6 +6,11 @@ import { ManipulationMode } from 'src/app/shared/enums/manipulation-mode.enum';
 import { DialogCloseData } from 'src/app/shared/models/dialog-close-data.model';
 import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service';
+import { FormControl } from '@angular/forms';
+import { startWith, debounceTime } from 'rxjs/operators';
+import * as L from 'lodash';
+import { Penalty } from '../../models/penalty.model';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-add-file',
@@ -17,9 +22,13 @@ export class AddFileComponent implements OnInit {
   title = 'تصویر کارمند';
   loading = false;
   mode: ManipulationMode = ManipulationMode.create;
+  manipulationMode = ManipulationMode;
 
   employees: Employee[] = [];
   selectedEmployees: Employee[] = [];
+  stateCtrl = new FormControl('');
+
+  todayName = moment().locale('fa').format('dddd');
 
   constructor(
     private fileService: FileService,
@@ -31,6 +40,20 @@ export class AddFileComponent implements OnInit {
   file: File = new File();
 
   ngOnInit() {
+    moment.locale('fa');
+
+    this.stateCtrl.valueChanges.pipe(
+      startWith(''),
+      debounceTime(500)).subscribe((value) => {
+        if (value) {
+          this.employeeService.filterEmployees(value.trim(), L.flatMapDeep(this.file.penalties, p => p.employee._id)).subscribe(result => {
+            if (result) {
+              this.employees = result;
+            }
+          });
+        }
+      });
+
     if (this.data) {
       this.mode = ManipulationMode.update;
       this.fileService.getById(this.data.id).subscribe(result => {
@@ -39,12 +62,20 @@ export class AddFileComponent implements OnInit {
     }
   }
 
-  filter(value: string) {
-    this.employeeService.filterEmployees(value).subscribe(result => {
-      if (result) {
-        this.employees = result;
-      }
+  addPenalty(event) {
+    this.file.penalties.push({
+      _id: null,
+      value: 5000,
+      paid: false,
+      paymentDate: null,
+      employee: this.employees.find(e => e._id === event.option.id)
     });
+
+    this.employees = [];
+  }
+
+  removePenalty(id: string) {
+    L.remove(this.file.penalties, (p: Penalty) => p.employee._id === id);
   }
 
   save() {
@@ -53,6 +84,7 @@ export class AddFileComponent implements OnInit {
   }
 
   add() {
+    this.file.date = moment().locale('fa').format('YYYY-MM-DDTh:mm:ss');
     this.fileService.add(this.file).subscribe(result => {
       if (result) {
         const data: DialogCloseData = { canceled: false };

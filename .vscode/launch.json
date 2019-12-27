@@ -11,6 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
+            "preLaunchTask": "compile",
             "program": "${workspaceFolder}\\server\\server.js"
         }
     ]
