@@ -29,6 +29,7 @@ export class AddFileComponent implements OnInit {
   stateCtrl = new FormControl('');
 
   todayName = moment().locale('fa').format('dddd');
+  // todayName = moment().locale('fa').subtract(3, 'days').format('dddd');
 
   constructor(
     private fileService: FileService,
@@ -85,6 +86,7 @@ export class AddFileComponent implements OnInit {
 
   add() {
     this.file.date = moment().locale('fa').format('YYYY-MM-DDTh:mm:ss');
+    // this.file.date = moment().locale('fa').subtract(3, 'days').format('YYYY-MM-DDTh:mm:ss');
     this.fileService.add(this.file).subscribe(result => {
       if (result) {
         const data: DialogCloseData = { canceled: false };

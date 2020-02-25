@@ -46,6 +46,7 @@ export const getAllFiles = function (req, res) {
             path: 'penalties',
             populate: { path: 'employee' }
         })
+        .sort({ date: 'descending' })
         .exec(function (err, files) {
             if (err) return handleError(err);
 
